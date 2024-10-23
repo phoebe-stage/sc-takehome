@@ -103,11 +103,12 @@ func PrettyPrint(b interface{}) {
 	fmt.Print(string(s))
 }
 
-func GetSampleData() []Folder {
+//changed to allow to get any sample data from a json file
+func GetSampleData(json_data string ) []Folder {
 	_, filename, _, _ := runtime.Caller(0)
 	fmt.Println(filename)
 	basePath := filepath.Dir(filename)
-	filePath := filepath.Join(basePath, "sample.json")
+	filePath := filepath.Join(basePath, json_data)
 
 	fmt.Println(filePath)
 
